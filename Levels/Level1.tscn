@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ball/Ball Container.gd" type="Script" id=2]
+[ext_resource path="res://Paddle/Paddle Container.gd" type="Script" id=3]
+
+[node name="Game" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 680, 0, 0, 1024, 0, 1024, 696, 1136, 696, 1136, -104, -112, -104, -112, 680 )
+
+[node name="Paddle Container" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Ball Container" type="Node2D" parent="."]
+script = ExtResource( 2 )
