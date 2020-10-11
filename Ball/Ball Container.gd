@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var Ball = load("res://Ball/Ball.tscn")
-var speed = 300
+var speed = 500
 
 func _ready():
 	randomize()

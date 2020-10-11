@@ -19,6 +19,10 @@ config/name="Juicy Brick breaker"
 run/main_scene="res://Levels/Level1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [input]
 
 left={

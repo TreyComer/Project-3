@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level/Level.gd" type="Script" id=1]
+[ext_resource path="res://Assets/spaceBuilding_007.png" type="Texture" id=2]
+
+[node name="Level2" type="Area2D"]
+visible = false
+monitoring = false
+collision_mask = 16
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 509.117, 320.319 )
+scale = Vector2( 1.52264, 1.44578 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 509.117, 320.319 )
+scale = Vector2( 1.52264, 1.44578 )
+polygon = PoolVector2Array( 31, -40.2, 31, -38.9, 41, -29.9, 41, -27.5, 46, -20.4, 46, 19.4, 40.2, 31, 38.9, 31, 29.9, 41, 27.5, 41, 20.4, 46, -20.3, 46, -41, 30, -41, 27.5, -46, 20.4, -46, -19.4, -40.2, -31, -38.9, -31, -29.9, -41, -27.5, -41, -19.2, -46, 19.4, -46 )
+[connection signal="body_entered" from="." to="." method="_on_Level2_body_entered"]

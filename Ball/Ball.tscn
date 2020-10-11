@@ -8,7 +8,7 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 3.07143
+radius = 10.5336
 
 [node name="Ball" type="RigidBody2D"]
 physics_material_override = SubResource( 1 )
@@ -17,14 +17,10 @@ linear_velocity = Vector2( 200, -200 )
 linear_damp = 0.0
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Polygon2D" parent="."]
-position = Vector2( -2.61067, -18.9114 )
-scale = Vector2( 0.99913, 0.906578 )
-texture = ExtResource( 1 )
-polygon = PoolVector2Array( 6.19751, -5.62265, 7.13554, -3.87926, 8.80462, -2.62154, 9.27864, -0.54385, 9.27864, 4.07323, 9.01882, 4.80338, 8.09359, 7.3052, 6.43451, 8.69032, 4.87961, 8.61553, -1.92236, 7.99922, -3.97878, 6.45845, -4.46796, 5.68921, -5.17898, 3.14982, -3.97878, 0.757614, -3.97878, -0.475002, -2.80888, -4.23752, -1.40198, -4.49072, 0.509264, -6.08435, 2.11347, -5.71362, 4.75005, -5.34675 )
-uv = PoolVector2Array( 48, 1.6, 48, 3.3, 56, 12.2, 56, 16, 57.2, 31, 55.4, 31, 52.4, 39, 50.8, 39, 45.8, 44, 16.4, 44, 15, 43.1, 15, 41.7, 7, 32.8, 7, 29, 5.8, 14, 7.6, 14, 10.6, 6, 12.3, 6, 20, 0, 44, 0 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ) ]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.189987, -17.3239 )
 shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.187286, -17.3242 )
+texture = ExtResource( 1 )

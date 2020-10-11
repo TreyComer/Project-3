@@ -1,0 +1,176 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Menu"]
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 275.0
+margin_bottom = 778.0
+color = Color( 0.286275, 0.313726, 0.341176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="Control" parent="Menu"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 10.0
+margin_bottom = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="CheckBox" parent="Menu/Color"]
+margin_right = 126.419
+margin_bottom = 26.4193
+text = "Color"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles" type="Control" parent="Menu"]
+margin_left = 10.0
+margin_top = 50.0
+margin_right = 10.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles" type="CheckBox" parent="Menu/Particles"]
+text = "Particles"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blocks" type="Control" parent="Menu"]
+margin_left = 10.0
+margin_top = 85.0
+margin_bottom = 145.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blocks_Appear" type="CheckBox" parent="Menu/Blocks"]
+margin_right = 136.419
+margin_bottom = 36.4193
+text = "Blocks Appear"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blocks_Fall" type="CheckBox" parent="Menu/Blocks"]
+margin_top = 35.0
+margin_right = 134.0
+margin_bottom = 67.0
+text = "Blocks Fall"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blocks_Fade" type="CheckBox" parent="Menu/Blocks"]
+margin_top = 70.0
+margin_right = 134.0
+margin_bottom = 104.0
+text = "Blocks Fade"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ball" type="Control" parent="Menu"]
+margin_top = 220.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen_Shake" type="HSlider" parent="Menu/Ball"]
+margin_left = 15.0
+margin_top = 18.0
+margin_right = 110.0
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen_Shake_Label" type="Label" parent="Menu/Ball"]
+margin_left = 35.0
+margin_right = 124.0
+margin_bottom = 14.0
+text = "Screen Shake"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paddle" type="Control" parent="Menu"]
+margin_left = 10.0
+margin_top = 285.0
+margin_right = 10.0
+margin_bottom = 285.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paddle_Appear" type="CheckBox" parent="Menu/Paddle"]
+margin_right = 136.419
+margin_bottom = 36.4193
+text = "Paddle Appears"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paddle_Stretch" type="CheckBox" parent="Menu/Paddle"]
+margin_top = 35.0
+margin_right = 134.0
+margin_bottom = 67.0
+text = "Paddle Stretches"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="Control" parent="Menu"]
+
+[node name="Reset" type="Button" parent="Menu"]
+margin_left = 30.0
+margin_top = 670.0
+margin_right = 110.0
+margin_bottom = 700.0
+text = "Reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Menu"]
+margin_left = 30.0
+margin_top = 710.0
+margin_right = 110.0
+margin_bottom = 740.0
+text = "Quit"
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 512, 384 )
+[connection signal="toggled" from="Menu/Color/Color" to="." method="_on_Color_toggled"]
+[connection signal="toggled" from="Menu/Particles/Particles" to="." method="_on_Particles_toggled"]
+[connection signal="toggled" from="Menu/Blocks/Blocks_Appear" to="." method="_on_Blocks_Appear_toggled"]
+[connection signal="toggled" from="Menu/Blocks/Blocks_Fall" to="." method="_on_Blocks_Fall_toggled"]
+[connection signal="toggled" from="Menu/Blocks/Blocks_Fade" to="." method="_on_Blocks_Fade_toggled"]
+[connection signal="value_changed" from="Menu/Ball/Screen_Shake" to="." method="_on_Screen_Shake_value_changed"]
+[connection signal="toggled" from="Menu/Paddle/Paddle_Appear" to="." method="_on_Paddle_Appear_toggled"]
+[connection signal="toggled" from="Menu/Paddle/Paddle_Stretch" to="." method="_on_Paddle_Stretch_toggled"]
+[connection signal="pressed" from="Menu/Reset" to="." method="_on_Reset_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="." method="_on_Quit_pressed"]

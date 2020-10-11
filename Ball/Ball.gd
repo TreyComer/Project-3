@@ -1,8 +1,10 @@
 extends RigidBody2D
 
+onready var HUD = get_node("/root/Game/HUD")
 onready var VP = get_viewport_rect().size
-export var min_speed = 100
-export var max_speed = 400
+export var min_speed = 300
+export var max_speed = 600
+export var health = -50
 
 func _ready():
 	contact_monitor = true
@@ -17,7 +19,10 @@ func _physics_process(_delta):
 	for body in bodies:
 		if body.get_parent().name == "Paddle Container":
 			pass
-			
+		if body.has_method("emit_particle"):
+			body.emit_particle(global_position)
+		if body.is_in_group("Brick"):
+			body.die()
 
 func _integrate_forces(state):
 	if abs(state.linear_velocity.x) < min_speed:
@@ -31,3 +36,6 @@ func _integrate_forces(state):
 
 func die():
 	queue_free()
+	HUD.update_score(health)
+
+
